@@ -5,6 +5,9 @@ support.db
 build/
 *.rsls
 
+# dirs
+.idea/
+
 # Logs
 logs
 *.log

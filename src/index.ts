@@ -91,7 +91,17 @@ function main(bot: TelegramAddon = defaultBot, logs = true) {
   bot.command('clear', (ctx: Context) => commands.clearCommand(ctx));
   bot.command('start', (ctx: Context) => {
     if (ctx.chat.type == 'private') {
-      middleware.reply(ctx, cache.config.language.startCommandText);
+      middleware.reply(ctx, cache.config.language.startCommandText, {
+        reply_markup: {
+          resize_keyboard: true,
+          keyboard: [
+            [
+              cache.config.language.contactSupportButton,
+              cache.config.language.dailyTONAdvertisingButton,
+            ],
+          ],
+        },
+      });
       if (cache.config.categories && cache.config.categories.length > 0) {
         setTimeout(
             () =>
@@ -105,17 +115,6 @@ function main(bot: TelegramAddon = defaultBot, logs = true) {
       }
     } else middleware.reply(ctx, cache.config.language.prvChatOnly);
   });
-  bot.command('id', (ctx: Context) =>
-    middleware.reply(ctx, `User ID: ${ctx.from.id}\nGroup ID: ${ctx.chat.id}`, {
-      parse_mode: cache.config.parse_mode,
-    }),
-  );
-  bot.command('faq', (ctx: Context) =>
-    middleware.reply(ctx, cache.config.language.faqCommandText, {
-      parse_mode: cache.config.parse_mode,
-    }),
-  );
-  bot.command('help', (ctx: Context) => commands.helpCommand(ctx));
   bot.command('links', (ctx: Context) => {
     let links = '';
     const subcategories = [];

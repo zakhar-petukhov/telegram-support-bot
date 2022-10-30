@@ -69,6 +69,23 @@ function autoReply(ctx: Context) {
  */
 function chat(ctx: Context, chat: { id: string }) {
   cache.ticketID = ctx.message.from.id;
+
+  if (ctx.message.text == cache.config.language.contactSupportButton) {
+    middleware.msg(
+        chat.id,
+        cache.config.language.contactSupportText,
+    );
+    return;
+  }
+
+  if (ctx.message.text == cache.config.language.dailyTONAdvertisingButton) {
+    middleware.msg(
+        chat.id,
+        cache.config.language.dailyTONAdvertisingText,
+    );
+    return;
+  }
+
   // Check if auto reply works
   let isAutoReply = false;
   if (autoReply(ctx)) {

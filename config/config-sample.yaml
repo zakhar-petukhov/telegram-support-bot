@@ -73,7 +73,11 @@ language:
   doesntHelp: 'This does not help.'
   automatedReplySent: 'Automated reply was send to the user.'
   ticketReopened: 'Ticket reopened.'
-  regardsGroup: 'Botty Group'
+  regardsGroup: 'The Daily TON'
+  contactSupportButton: '☎️ Contact Support'
+  dailyTONAdvertisingButton: '💳 The Daily TON Advertising'
+  dailyTONAdvertisingText: 'Test text'
+  contactSupportText: 'If you want to contact for advertisement in The Daily TON or have any question, please, write here.'
 
 autoreply:
   - question: 'install'

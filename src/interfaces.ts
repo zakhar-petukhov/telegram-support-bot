@@ -65,6 +65,10 @@ interface Language {
   yourTicketId: string;
   helpCommandStaffText: string;
   regardsGroup: string;
+  contactSupportButton: string;
+  contactSupportText: string;
+  dailyTONAdvertisingButton: string;
+  dailyTONAdvertisingText: string;
   autoreply: Autoreply[];
 }
 
