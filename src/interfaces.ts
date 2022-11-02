@@ -68,7 +68,8 @@ interface Language {
   contactSupportButton: string;
   contactSupportText: string;
   dailyTONAdvertisingButton: string;
-  dailyTONAdvertisingText: string;
+  dailyTONAdvertisingTextRU: string;
+  dailyTONAdvertisingTextEN: string;
   autoreply: Autoreply[];
 }
 

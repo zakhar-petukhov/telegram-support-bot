@@ -81,7 +81,11 @@ function chat(ctx: Context, chat: { id: string }) {
   if (ctx.message.text == cache.config.language.dailyTONAdvertisingButton) {
     middleware.msg(
         chat.id,
-        cache.config.language.dailyTONAdvertisingText,
+        cache.config.language.dailyTONAdvertisingTextRU,
+    );
+    middleware.msg(
+        chat.id,
+        cache.config.language.dailyTONAdvertisingTextEN,
     );
     return;
   }
