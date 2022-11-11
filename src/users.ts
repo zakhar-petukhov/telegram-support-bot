@@ -19,10 +19,7 @@ function ticketMsg(
     anon = true,
     autoReplyInfo: any,
 ) {
-  let link = '';
-  if (!anon) {
-    link = `tg://user?id=${cache.ticketID}`;
-  }
+  const link = `tg://user?id=${cache.ticketID}`;
   const esc: any = middleware.strictEscape;
   return (
     `${cache.config.language.ticket} ` +
